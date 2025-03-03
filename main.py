@@ -1,15 +1,11 @@
+from stats import count_words
+
 def main():    
     path = './books/frankenstein.txt'
     text = load_book(path)
     word_count = count_words(text)
     char_count = count_chars(text)    
     generate_book_report(path, word_count, char_count)
-
-
-def count_words(text):
-    print('counting words...')
-    words = text.split()
-    return len(words)
 
 
 def generate_book_report(path, word_count, char_count):
