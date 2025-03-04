@@ -9,13 +9,16 @@ def main():
 
 
 def generate_book_report(path, word_count, char_count):
-    print(f'--- begin report of {path} ---')
-    print(f'{word_count} words found in the document')
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path}...")
+    print("----------- Word Count ----------")    
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
     char_map = generate_char_mapping(char_count)
     char_map.sort(reverse=True, key=sort_on_count)  
     for entry in char_map:
-        print(f"The '{entry['name']}' character was found {entry['count']} times")
-    print('--- End Report ---')
+        print(f"{entry['name']}: {entry['count']}")
+    print("============= END ===============")
 
 
 def generate_char_mapping(char_count):
