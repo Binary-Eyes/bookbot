@@ -1,7 +1,12 @@
+import sys
 from stats import count_words
 
-def main():    
-    path = './books/frankenstein.txt'
+def main():
+    if len(sys.argv) != 2:
+        print('please set the book path to read as the second argument')
+        sys.exit(1)
+    
+    path = sys.argv[1]    
     text = load_book(path)
     word_count = count_words(text)
     char_count = count_chars(text)    
