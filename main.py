@@ -1,3 +1,4 @@
+import sys
 from stats import count_words
 from stats import generate_char_count
 from stats import sort_char_count
@@ -24,9 +25,12 @@ def print_report(path):
 
 
 def main():
-    target_path = "./books/frankenstein.txt"
-    print_report(target_path)
+    if (len(sys.argv) != 2):
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
+    target_path = sys.argv[1]
+    print_report(target_path)
 
 if __name__=="__main__":
     main()
